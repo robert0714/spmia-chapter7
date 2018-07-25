@@ -33,8 +33,10 @@ public class Application {
     private static final Logger logger = LoggerFactory.getLogger(Application.class);
 
     @Bean
-    public OAuth2RestTemplate oauth2RestTemplate(OAuth2ClientContext oauth2ClientContext,
-                                                 OAuth2ProtectedResourceDetails details) {
+    
+    public OAuth2RestTemplate oauth2RestTemplate(@Autowired OAuth2ClientContext oauth2ClientContext,
+    		@Autowired OAuth2ProtectedResourceDetails details) {
+    	System.out.println("###############  oauth2ClientContext: "+oauth2ClientContext.getClass().getCanonicalName());;
         return new OAuth2RestTemplate(details, oauth2ClientContext);
     }
 
