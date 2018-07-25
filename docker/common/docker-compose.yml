@@ -8,6 +8,8 @@ services:
       image: johncarnell/tmx-confsvr:chapter7
       ports:
          - "8888:8888"
+      depends_on:
+        - "eurekaserver"
       environment:
          EUREKASERVER_PORT: 8761
          EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
@@ -16,6 +18,9 @@ services:
       image: johncarnell/tmx-zuulsvr:chapter7
       ports:
         - "5555:5555"
+      depends_on:
+        - "eurekaserver"
+        - "configserver"
       environment:
         PROFILE: "default"
         SERVER_PORT: "5555"
@@ -35,6 +40,12 @@ services:
       image: johncarnell/tmx-licensing-service:chapter7
       ports:
         - "8080:8080"
+      depends_on:
+        - "database"
+        - "configserver"
+        - "eurekaserver"
+        - "zuulserver"
+        - "authenticationservice"
       environment:
         PROFILE: "default"
         SERVER_PORT: "8080"
@@ -51,6 +62,11 @@ services:
       image: johncarnell/tmx-organization-service:chapter7
       ports:
         - "8085:8085"
+      depends_on:
+        - "database"
+        - "configserver"
+        - "eurekaserver"
+        - "authenticationservice"
       environment:
         PROFILE: "default"
         SERVER_PORT: "8085"
@@ -66,6 +82,11 @@ services:
       image: johncarnell/tmx-authentication-service:chapter7
       ports:
         - "8901:8901"
+      depends_on:
+        - "database"
+        - "configserver"
+        - "eurekaserver"
+        - "zuulserver"
       environment:
         PROFILE: "default"
         SERVER_PORT: "8901"

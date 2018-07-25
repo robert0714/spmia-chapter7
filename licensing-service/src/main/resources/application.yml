@@ -27,3 +27,6 @@ logging:
     com.thoughtmechanix: DEBUG
 
 
+management:
+  security:
+     enabled: false
