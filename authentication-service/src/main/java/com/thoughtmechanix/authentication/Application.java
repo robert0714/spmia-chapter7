@@ -2,6 +2,7 @@ package com.thoughtmechanix.authentication;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.MediaType;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
@@ -17,7 +18,7 @@ import java.util.Map;
 @EnableResourceServer
 @EnableAuthorizationServer
 public class Application {
-    @RequestMapping(value = { "/user" }, produces = "application/json")
+    @RequestMapping(value = { "/user" },  produces=MediaType.APPLICATION_JSON_VALUE)
     public Map<String, Object> user(OAuth2Authentication user) {
         Map<String, Object> userInfo = new HashMap<>();
         userInfo.put("user", user.getUserAuthentication().getPrincipal());
