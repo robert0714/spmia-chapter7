@@ -30,3 +30,10 @@ server:
 management:
   security:
      enabled: false
+
+#根據 https://stackoverflow.com/questions/42320756/oauth2-with-spring-boot-rest-application-cannot-access-resource-with-token
+#而有所修正    
+security:
+  oauth2:
+    resource:
+      filter-order: 3

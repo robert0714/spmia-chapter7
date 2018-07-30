@@ -14,8 +14,8 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.4.4.RELEASE</version>
-  </parent>
+    <version>1.5.14.RELEASE</version>
+  </parent> 
   <modules>
     <module>authentication-service</module>
     <module>confsvr</module>
@@ -31,7 +31,7 @@
       <plugin>
         <groupId>com.spotify</groupId>
         <artifactId>docker-maven-plugin</artifactId>
-        <version>0.4.10</version>
+        <version>1.1.1</version>
         <configuration>
         <baseImage>java</baseImage>
         <imageName>example</imageName>

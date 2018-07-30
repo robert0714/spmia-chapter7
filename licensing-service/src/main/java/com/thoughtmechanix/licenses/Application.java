@@ -1,4 +1,4 @@
-package com.thoughtmechanix.licenses;
+ package com.thoughtmechanix.licenses;
 
 import com.thoughtmechanix.licenses.config.ServiceConfig;
 import com.thoughtmechanix.licenses.utils.UserContextInterceptor;

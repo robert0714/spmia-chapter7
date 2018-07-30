@@ -48,14 +48,13 @@
     </dependency>
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
-      <artifactId>httpclient</artifactId>
-      <version>4.5.5</version>
+      <artifactId>httpclient</artifactId> 
     </dependency>
 
       <dependency>
           <groupId>io.jsonwebtoken</groupId>
           <artifactId>jjwt</artifactId>
-          <version>0.7.0</version>
+          <version>0.9.1</version>
       </dependency>
 
 
