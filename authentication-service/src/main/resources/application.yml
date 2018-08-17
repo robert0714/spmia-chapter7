@@ -26,3 +26,6 @@ eureka:
 
 server:
   contextPath:   /auth
+  
+signing:
+  key: "345345fsdfsf5345"
