@@ -16,6 +16,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.security.oauth2.client.OAuth2ClientContext;
 import org.springframework.security.oauth2.client.OAuth2RestTemplate;
 import org.springframework.security.oauth2.client.resource.OAuth2ProtectedResourceDetails;
+import org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeResourceDetails;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.web.client.RestTemplate;
 import java.util.Collections;
@@ -32,14 +33,34 @@ public class Application {
 
     private static final Logger logger = LoggerFactory.getLogger(Application.class);
 
-    @Bean
+//    @Bean    
+//    public OAuth2RestTemplate oauth2RestTemplate(@Autowired OAuth2ClientContext oauth2ClientContext,
+//    		@Autowired OAuth2ProtectedResourceDetails details) {
+//    	System.out.println("###############  oauth2ClientContext: "+oauth2ClientContext.getClass().getCanonicalName());;
+//        return new OAuth2RestTemplate(details, oauth2ClientContext);
+//    }
     
-    public OAuth2RestTemplate oauth2RestTemplate(@Autowired OAuth2ClientContext oauth2ClientContext,
-    		@Autowired OAuth2ProtectedResourceDetails details) {
-    	System.out.println("###############  oauth2ClientContext: "+oauth2ClientContext.getClass().getCanonicalName());;
-        return new OAuth2RestTemplate(details, oauth2ClientContext);
-    }
-
+//    @Bean
+//    public OAuth2RestTemplate restTemplate(OAuth2ClientContext context) {
+//        return new OAuth2RestTemplate(authorizationCode(), context);
+//    }
+    
+//    /***
+//     * TEST
+//     * ******/
+//    @Bean
+//    public OAuth2ProtectedResourceDetails authorizationCode() {
+//        AuthorizationCodeResourceDetails details =
+//            new AuthorizationCodeResourceDetails();
+//        details.setId("oauth2server");
+//        details.setClientId("clientapp");
+//        details.setClientSecret("123");
+//        details.setUseCurrentUri(true);
+//        details.setUserAuthorizationUri("http://localhost:8080/oauth/authorize");
+//        details.setAccessTokenUri("http://localhost:8080/oauth/token");
+//        return details;
+//    }
+    
 //    @Primary
 //    @Bean
 //    public RestTemplate getCustomRestTemplate() {
